@@ -15,7 +15,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		$buttons = ( empty( $options['buttons'] ) ? [ ] : $options['buttons'] );
 		$format = ( empty( $options['format'] ) ? 'text' : $options['format'] );
 		$url = ( empty( $options['url'] ) ? '' : $options['url'] );
-		$value = ( empty( $options['value'] ) ? $model->{$field_name} : $options['value'] );
+		$value = html::encode( ( empty( $options['value'] ) ? $model->{$field_name} : $options['value'] ) );
 
 		if ( empty( $value ) && $format != 'boolean' ) return;
 
@@ -23,7 +23,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		echo '<label class="col-sm-3 control-label">' . $model->getAttributeLabel( $field_name ) . '</label>';
 		echo '<div class="col-sm-9"><div class="panel-field">';
 
-		$info = html::encode( Yii::$app->formatter->format( $value, $format ) );
+		$info = Yii::$app->formatter->format( $value, $format );
 
 		echo ( empty( $url ) ? $info : Html::a( $info, $url ) );
 
