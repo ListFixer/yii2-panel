@@ -108,13 +108,10 @@ class PanelForm extends \yii\widgets\ActiveForm
 		return $this->heading( $model->getAttributeLabel( $field_name ), $value, $options );
 	}
 
-	public function heading( $label, $value, $options = [ ] )
+	public function heading( $label, $value )
 	{
-		$format = ( empty( $options['format'] ) ? 'text' : $options['format'] );
-
 		return '<div class="form-group"><label class="col-sm-3 control-label">' . $label . '</label>' .
-				'<div class="col-sm-5"><div class="panel-field">' .
-				Yii::$app->formatter->format( $value, $format ) . '</div></div></div>';
+				'<div class="col-sm-5"><div class="panel-field">' . $value . '</div></div></div>';
 	}
 }
 
