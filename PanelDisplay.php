@@ -44,7 +44,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 
 		echo GridView::widget( [
 			'dataProvider' => $dataProvider,
-			'showFooter' => !empty( $options['footer'] ),
+			'showFooter' => !empty( $options['showFooter'] ),
 			'tableOptions' => $tableOptions,
 			'rowOptions' => ( empty( $options['rowOptions'] ) ? false : $options['rowOptions'] ),
 			'pager' => [ 'maxButtonCount' => 6 ],
