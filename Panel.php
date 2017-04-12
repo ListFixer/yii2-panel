@@ -28,9 +28,9 @@ class Panel extends \yii\base\Widget
 	 */
 	public $_hasFields = false;
 	/**
-	 * @var string Raw HTML to be included in heading
+	 * @var string Raw HTML to be included in header
 	 */
-	public $headingHtml = null;
+	public $headerHtml = null;
 	/**
 	 * @var string Submit button label
 	 */
@@ -109,8 +109,8 @@ class Panel extends \yii\base\Widget
 			echo '</div>';
 		}
 
-		if ( isset( $this->headingHtml ) )
-			echo $this->headingHtml;
+		if ( isset( $this->headerHtml ) )
+			echo $this->headerHtml;
 	
 		echo '</div></div></div>';
 
