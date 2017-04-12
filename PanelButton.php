@@ -47,7 +47,7 @@ class PanelButton extends \yii\base\Widget
          Modal::begin( [
                'header' => $this->label,
                'size' => 'modal-sm',
-               'toggleButton' => [ 'label' => $this->label, 'class' => 'btn ' . $this->class . ( $this->small ? ' btn-xs' : '' ) ],
+               'toggleButton' => [ 'label' => $this->label, 'class' => 'btn ' . $this->color . ( $this->small ? ' btn-xs' : '' ) ],
                ] );
 
          echo '<p>Do you want to ' . strtolower( $this->label );
