@@ -15,7 +15,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		$buttons = ( empty( $options['buttons'] ) ? [ ] : $options['buttons'] );
 		$format = ( empty( $options['format'] ) ? 'text' : $options['format'] );
 		$url = ( empty( $options['url'] ) ? '' : $options['url'] );
-		$value = html::encode( ( empty( $options['value'] ) ? $model->{$field_name} : $options['value'] ) );
+		$value = ( empty( $options['value'] ) ? $model->{$field_name} : $options['value'] );
 
 		if ( empty( $value ) && $format != 'boolean' ) return;
 
