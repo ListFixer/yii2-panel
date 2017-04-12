@@ -80,7 +80,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		ActiveForm::end( );
 	}
 
-	public function notes( $model = null, $notes )
+	public function notes( $notes, $model = null )
 	{
 		echo '<ul class="list-group">';
 		echo '<li class="list-group-item"><strong>Notes:</strong></li>';
