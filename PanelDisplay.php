@@ -28,7 +28,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		echo ( empty( $url ) ? $info : Html::a( $info, $url ) );
 
 		foreach ( $buttons as $button )
-			$this->button( $button, true );
+			static::button( $button, true );
 		
 		echo '</div></div></div>';
 	}
