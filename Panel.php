@@ -6,27 +6,29 @@ use yii\helpers\Html;
 
 class Panel extends \yii\base\Widget
 {
-    /**
-     * @var string Panel color: panel-default, panel-primary, panel-success, panel-info, panel-warning, panel-danger
+	/**
+	 * @var string Color: panel-default, panel-primary, panel-success, panel-info, panel-warning, panel-danger
 	 */
 	public $color = 'panel-default';
 	/**
-	 * @var string Panel title
+	 * @var string Title
 	 */
 	public $title = null;
+	/**
+	 * @var array Array of PanelButtton
+	 */
+	public $rightHeaderButtons = null;
 	/**
 	 * @var array Buttons: [ label => url ]
 	 */
 	public $buttonGroup = null;
+	public $leftFooterButtons = null;
+	public $rightFooterButtons = null;
 	public $pills = null;
 	/**
 	 * @var string If empty then route is used to determine active pill.  If not empty then "p" URL parameter is used.
 	 */
 	public $defaultPill = null;
-	/**
-	 * @var boolean Used internally to trigger correct CSS class
-	 */
-	public $_hasFields = false;
 	/**
 	 * @var string Raw HTML to be included in header
 	 */
@@ -35,25 +37,14 @@ class Panel extends \yii\base\Widget
 	 * @var string Submit button label
 	 */
 	public $submitLabel = null;
-    /**
-     * @var string Submit button color: btn-default, btn-primary, btn-success, btn-info, btn-warning, btn-danger
+    	/**
+     	 * @var string Color: btn-default, btn-primary, btn-success, btn-info, btn-warning, btn-danger
 	 */
 	public $submitClass = 'btn-primary';
 	/**
-	 * @var array Array of butttons with these keys:
-	 * @var string label - Button label
-	 * @var string url - Destination URL
-	 * @var string class - Button color: btn-default, btn-primary, btn-success, btn-info, btn-warning, btn-danger
-	 * @var string name - Name entity button will operate on
-	 * @var string holder - Holder of entity button will operate on
-	 * @var boolean confirm - Use modal confirm dialog
-	 */
-	public $rightHeaderButtons = null;
-	public $leftFooterButtons = null;
-	public $rightFooterButtons = null;
-	/**
 	 * @var boolean Used internally to trigger correct CSS class
 	 */
+	public $_hasFields = false;
 
 	public function init( )
 	{
@@ -97,7 +88,10 @@ class Panel extends \yii\base\Widget
 		{
 			echo '<div class="pull-right" style="margin-left: 8px;">';
 			foreach ( $this->rightHeaderButtons as $button )
-				static::button( $button, false );
+			{
+				$button['small'] = false;
+				echo PanelButton::widget( $button );
+			}
 			echo '</div>';
 		}
 
