@@ -69,20 +69,22 @@ class PanelForm extends \yii\widgets\ActiveForm
 
 	public function checkboxGroup( $model, $name, $fields )
 	{
-		echo '<div class="form-group' . ( empty( $model->errors[$name] ) ? '' : ' has-error' ) . '">';
+		$html = '<div class="form-group' . ( empty( $model->errors[$name] ) ? '' : ' has-error' ) . '">';
 
-		echo '<label class="col-sm-3 control-label">Levels</label>';
-		echo '<div class="col-sm-5"><div class="form-control" style="height: auto;">';
+		$html .= '<label class="col-sm-3 control-label">Levels</label>';
+		$html .= '<div class="col-sm-5"><div class="form-control" style="height: auto;">';
 
 		foreach ( $fields as $field => $label )
-			echo $this->field( $model, $field, [ 'options' => [ 'tag' => 'span' ], 'template' => '<div style="display: inline-block;">{input} ' . $label . ' </div>' ] )->checkBox( [ ], false );
+			$html .= $this->field( $model, $field, [ 'options' => [ 'tag' => 'span' ], 'template' => '<div style="display: inline-block;">{input} ' . $label . ' </div>' ] )->checkBox( [ ], false );
 
-		echo '</div></div>';
+		$html .= '</div></div>';
 
 		if ( !empty( $model->errors[$name] ) )
-			echo '<div class="col-sm-4"><div class="help-block">' . $model->errors[$name][0] . '</div></div>';
+			$html .= '<div class="col-sm-4"><div class="help-block">' . $model->errors[$name][0] . '</div></div>';
 
-		echo '</div>';
+		$html .= '</div>';
+
+		return $html;
 	}
 
 	public function datePickerField( $model, $field_name )
