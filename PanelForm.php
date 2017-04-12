@@ -114,7 +114,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 
 		return '<div class="form-group"><label class="col-sm-3 control-label">' . $label . '</label>' .
 				'<div class="col-sm-5"><div class="panel-field">' .
-				html::encode( Yii::$app->formatter->format( $value, $format ) ) . '</div></div></div>';
+				Yii::$app->formatter->format( $value, $format ) . '</div></div></div>';
 	}
 }
 
