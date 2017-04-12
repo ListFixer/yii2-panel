@@ -1,7 +1,6 @@
 <?php namespace listfixer\panel;
 
 use Yii;
-use yii\bootstrap\Modal;
 use yii\helpers\Html;
 
 class Panel extends \yii\base\Widget
@@ -139,37 +138,5 @@ class Panel extends \yii\base\Widget
 
 		if ( $this->_hasFields )
 			echo '</div>';
-	}
-
-	public static function button( $button, $small = true )
-	{
-		if ( empty( $button['confirm'] ) )
-			echo ' ' . Html::a( $button['label'], $button['url'], [ 'class' => 'btn ' . ( isset( $button['class'] ) ? $button['class'] : 'btn-primary' ) . ( $small ? ' btn-xs' : '' ) ] );
-		else
-		{
-			echo ' ';
-
-			Modal::begin( [
-					'header' => $button['label'],
-					'size' => 'modal-sm',
-					'toggleButton' => [ 'label' => $button['label'], 'class' => 'btn ' . ( empty( $button['class'] ) ? 'btn-danger' : $button['class'] ) . ( $small ? ' btn-xs' : '' ) ],
-					] );
-
-			echo '<p>Do you want to ' . strtolower( $button['label'] );
-
-			if ( !empty( $button['name'] ) )
-				echo ' "' . $button['name'] . '"';
-
-			if ( !empty( $button['holder'] ) )
-				echo ' from "' . html::encode( $button['holder'] ) . '"';
-
-			echo '?</p>';
-			echo '<div class="btn-group btn-group-justified">';
-			echo '<div class="btn-group">' . Html::a( 'Yes', $button['url'], [ 'class' => 'btn btn-danger' ] ). '</div>';
-			echo '<div class="btn-group">' . Html::button( 'No', [ 'class' => 'btn btn-info', 'data-dismiss' => 'modal' ] ) . '</div>';
-			echo '</div>';
-
-			Modal::end( );
-		}
 	}
 }
