@@ -97,7 +97,7 @@ class Panel extends \yii\base\Widget
 		{
 			echo '<div class="pull-right" style="margin-left: 8px;">';
 			foreach ( $this->rightHeaderButtons as $button )
-				$this->button( $button, false );
+				static::button( $button, false );
 			echo '</div>';
 		}
 
@@ -147,7 +147,7 @@ class Panel extends \yii\base\Widget
 			echo '</div>';
 	}
 
-	public function button( $button, $small = true )
+	public static function button( $button, $small = true )
 	{
 		if ( empty( $button['confirm'] ) )
 			echo ' ' . Html::a( $button['label'], $button['url'], [ 'class' => 'btn ' . ( isset( $button['class'] ) ? $button['class'] : 'btn-primary' ) . ( $small ? ' btn-xs' : '' ) ] );
