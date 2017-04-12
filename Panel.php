@@ -147,7 +147,7 @@ class Panel extends \yii\base\Widget
 			echo '</div>';
 	}
 
-	public function button( $button, $small = false )
+	public function button( $button, $small = true )
 	{
 		if ( empty( $button['confirm'] ) )
 			echo ' ' . Html::a( $button['label'], $button['url'], [ 'class' => 'btn ' . ( isset( $button['class'] ) ? $button['class'] : 'btn-primary' ) . ( $small ? ' btn-xs' : '' ) ] );
