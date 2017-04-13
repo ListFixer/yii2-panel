@@ -47,6 +47,8 @@ class PanelForm extends \yii\widgets\ActiveForm
 		if ( !empty( $options['template'] ) )
 			$config['templates'] = [ 'suggestion' => new JsExpression( 'Handlebars.compile( "{' . $options['template'] . '}" ) ') ];
 
+		echo $this->field( $model, $field_id, [ 'template' => '{input}', 'options' => [ 'tag' => 'span', 'class' => null ] ] )->hiddenInput( )->label( false );
+
 		return $this->field( $model, $field_name )->widget( Typeahead::classname( ), [
 			'dataset' => [ $config ],
 			'useHandleBars' => !empty( $options['template'] ),
@@ -56,8 +58,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 				'typeahead:select' => 'function( event, ui ) { document.getElementById( "' . $id_html_id . '" ).value = ui.id; save_' . $field_name . ' = ui.value; }'
 			],
 			'options' => [ 'placeholder' => 'Auto Search' ]
-		] ) .
-			$this->field( $model, $field_id, [ 'template' => '{input}', 'options' => [ 'tag' => 'span', 'class' => null ] ] )->hiddenInput( )->label( false );
+		] );
 	}
 	
 	public function checkboxField( $model, $field_name, $options = [ ] )
