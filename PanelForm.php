@@ -46,7 +46,10 @@ class PanelForm extends \yii\widgets\ActiveForm
 		$config['remote'] = [ 'url' => Url::to( [ $url ] ) . '?q=%Q%', 'wildcard' => '%Q%' ];
 
 		if ( !empty( $options['template'] ) )
-			$config['templates'] = [ 'suggestion' => new JsExpression( 'Handlebars.compile( "{' . $options['template'] . '}" ) ') ];
+		{
+			$template = $options['template'];
+			$config['templates'] = [ 'suggestion' => new JsExpression( "Handlebars.compile( '{$template}' )" ) ];
+		}
 
 		echo $this->field( $model, $field_id, [ 'template' => '{input}', 'options' => [ 'tag' => 'span', 'class' => null ] ] )->hiddenInput( )->label( false );
 
