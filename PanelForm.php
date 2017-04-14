@@ -51,6 +51,9 @@ class PanelForm extends \yii\widgets\ActiveForm
 			$config['templates'] = [ 'suggestion' => new JsExpression( "Handlebars.compile( '{$template}' )" ) ];
 		}
 
+		if ( $errors = $model->getErrors( $field_id ) )
+         		$model->addErrors( [ $field_name => $errors ] );
+
 		echo $this->field( $model, $field_id, [ 'template' => '{input}', 'options' => [ 'tag' => 'span', 'class' => null ] ] )->hiddenInput( )->label( false );
 
 		return $this->field( $model, $field_name )->widget( Typeahead::classname( ), [
