@@ -23,3 +23,16 @@ div.panel-field {
 	background-color: #f5f5f5;
 }
 
+.btn-primary {
+   background-image: none;
+}
+
+.panel-heading .btn,
+.panel-footer .btn {
+   margin-top: 5px !important;
+   margin-bottom: 5px !important;
+}
+
+.form-control{
+   transition: all 0 ease 0;
+}
