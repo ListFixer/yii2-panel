@@ -100,12 +100,10 @@ class PanelForm extends \yii\widgets\ActiveForm
 	{
 		return $this->field( $model, $field_name )->widget( DatePicker::classname( ), [
 			'type' => DatePicker::TYPE_INPUT,
-			'convertFormat' => true,
 			'options' => [ 'placeholder' => 'MM/DD/YYYY' ],
 			'pluginOptions' => [
 				'forceParse' => true,
-				'autoclose' => true,
-				'format' => 'php:n/j/Y'
+				'autoclose' => true
 			]
 		] );
 	}
