@@ -43,7 +43,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 
 		$config['limit'] = 15;
 		$config['display'] = 'value';
-		$config['remote'] = [ 'url' => Url::to( [ $url ] ) . '?q=%Q%', 'wildcard' => '%Q%' ];
+		$config['remote'] = [ 'url' => Url::to( $url ) . '?q=%Q%', 'wildcard' => '%Q%' ];
 
 		if ( !empty( $options['template'] ) )
 		{
