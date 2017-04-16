@@ -117,7 +117,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 		return $this->heading( $model->getAttributeLabel( $field_name ), $value, $options );
 	}
 
-	public function fileInputField( $model, $url, $max_file_size_mb, $options )
+	public function fileInputField( $model, $max_file_size_mb, $url, $options )
     	{
         	echo '<script>function upload_error( data ) { if ( data.response.error === undefined ) msg = ""; else msg = data.response.error; ' .
                 	'jQuery( "#upload" ).empty( ).append( "<div class=\"panel-field\">Your import did NOT complete. " + msg + "</div>" ); }</script>';
