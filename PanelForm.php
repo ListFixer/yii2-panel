@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\web\JsExpression;
 
 use kartik\date\DatePicker;
+use kartik\file\FileInput;
 use kartik\typeahead\Typeahead;
 use listfixer\panel\Panel;
 
@@ -116,6 +117,44 @@ class PanelForm extends \yii\widgets\ActiveForm
 		return $this->heading( $model->getAttributeLabel( $field_name ), $value, $options );
 	}
 
+	public function fileInputField( $model, $url, $max_file_size_mb, $options )
+    	{
+        	echo '<script>function upload_error( data ) { if ( data.response.error === undefined ) msg = ""; else msg = data.response.error; ' .
+                	'jQuery( "#upload" ).empty( ).append( "<div class=\"panel-field\">Your import did NOT complete. " + msg + "</div>" ); }</script>';
+
+        	echo $this->field( $model, 'file', [ 'template' => '{label}<div id=upload class="col-sm-9">{input}</div>{error}' ] )
+                	->widget( FileInput::classname( ), [
+	                	'pluginLoading' => false,
+        	        	'options' => $options,
+                		'pluginEvents' => [
+					'filebatchuploadsuccess' => 'function( ) { jQuery( "#upload" ).empty( ).append( "<div class=\"panel-field\">Upload complete.</div>" ); }',
+                   			'filebatchuploaderror' => 'function( event, data ) { upload_error( data ); }',
+                   			'fileerror' => 'function( event, data ) { upload_error( data );}',
+                   			'filebrowse' => 'function( event ) { jQuery( "#trialresult-file" ).fileinput( "clear" ); }',
+                   			'fileuploaderror' => 'function( event, data ) { upload_error( data ); }',
+                		],
+                		'pluginOptions' => [
+                   			'uploadAsync' => false,
+                   			'showPreview' => false,
+                   			'showRemove' => false,
+                   			'minFileCount' => 1,
+                   			'maxFileCount' => 1,
+                   			'browseIcon' => '',
+                   			'uploadIcon' => '',
+                   			'uploadClass' => 'btn btn-success',
+                   			'cancelIcon' => '',
+                   			'cancelClass' => 'btn btn-danger',
+                   			'maxFileSize' => $max_file_size_mb * 1024 * 1024,
+                   			'uploadUrl' => Url::to( $url ),
+                   			'layoutTemplates' => [
+                      				'main1' => '<div class="kv-upload-progress"></div><div class="input-group {class}">{caption}<div class="input-group-btn">{browse}</div></div>' .
+                                  			'<div class="upload-btns">{upload}{remove}{cancel}</div>',
+                      				'progress' => '<div class="progress"><div class="progress-bar progress-bar-primary text-center" style="width:{percent}%;">{percent}%</div></div>'
+                   			]
+                		]
+            		] );
+    	}
+	
 	public function heading( $label, $value )
 	{
 		return '<div class="form-group"><label class="col-sm-3 control-label">' . $label . '</label>' .
