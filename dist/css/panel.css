@@ -36,3 +36,42 @@ div.panel-field {
 .form-control{
    transition: all 0 ease 0;
 }
+
+.list-group {
+   margin-bottom: 10px !important;
+}
+
+a.asc:after {
+   content: " \2193";
+}
+
+a.desc:after {
+   content: " \2191";
+}
+
+.grid-view th {
+   white-space: nowrap;
+}
+
+.hint-block {
+   display: block;
+   margin-bottom: 0px;
+   color: #ad5d0f
+}
+
+.pagination {
+   margin-top: 0px !important;
+   margin-bottom: 8px !important;
+}
+
+form.index-search-form {
+   margin-top: 0px !important;
+   margin-bottom: 14px !important;
+   padding-top: 0px !important;
+   padding-bottom: 0px !important;
+}
+
+.upload-btns a, .upload-btns button {
+   margin-top: 10px;
+   margin-right: 10px;
+}
