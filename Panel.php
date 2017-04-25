@@ -113,7 +113,7 @@ class Panel extends \yii\base\Widget
 
 		// Body
 		if ( $content )
-			echo '<div class="panel-body">' . $content . '</div>';
+			echo '<div class="' . $this->bodyClass . '">' . $content . '</div>';
 
 		// Footer
 		if ( $this->submitLabel || $this->leftFooterButtons || $this->rightFooterButtons )
@@ -121,7 +121,7 @@ class Panel extends \yii\base\Widget
 			echo '<div class="panel-footer"><div class="row"><div class="' . ( $this->_hasFields ? 'col-sm-9 col-sm-offset-3' : 'col-sm-12' ) . '">';
 
 			if ( $this->submitLabel )
-				echo Html::submitButton( $this->submitLabel, [ 'class' => 'btn ' . $this->submitClass ] );
+				echo Html::submitButton( $this->submitLabel, [ 'class' => 'btn ' . $this->submitColor ] );
 
 			if ( $this->leftFooterButtons )
 				foreach ( $this->leftFooterButtons as $label => $destination )
