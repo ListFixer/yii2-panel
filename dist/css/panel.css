@@ -4,7 +4,7 @@ div.panel-title {
 	 display: inline-block;
 }
 
-div.panel-body {
+div.panel-body-padding-bottom-zero {
 	 padding-bottom: 0px !important;
 }
  
