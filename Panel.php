@@ -39,7 +39,11 @@ class Panel extends \yii\base\Widget
     	/**
      	 * @var string Color: btn-default, btn-primary, btn-success, btn-info, btn-warning, btn-danger
 	 */
-	public $submitClass = 'btn-primary';
+	public $submitColor = 'btn-primary';
+	/**
+	 * @var string Body class
+	 */
+	public $bodyClass = 'panel-body';
 	/**
 	 * @var boolean Used internally to trigger correct CSS class
 	 */
