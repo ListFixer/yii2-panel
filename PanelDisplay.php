@@ -17,7 +17,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		$url = ( empty( $options['url'] ) ? '' : $options['url'] );
 		$value = ( empty( $options['value'] ) ? $model->{$field_name} : $options['value'] );
 
-		if ( empty( $value ) && $format != 'boolean' ) return;
+		if ( empty( $value ) && $format != 'boolean' && empty( $options['buttons'] ) ) return;
 
 		echo '<div class="form-group">';	
 		echo '<label class="col-sm-3 control-label">' . $model->getAttributeLabel( $field_name ) . '</label>';
