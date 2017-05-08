@@ -159,7 +159,3 @@ class PanelForm extends \yii\widgets\ActiveForm
 				'<div class="col-sm-5"><div class="panel-field">' . $value . '</div></div></div>';
 	}
 }
-
-
-
-
