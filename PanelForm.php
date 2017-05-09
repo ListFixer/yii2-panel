@@ -120,7 +120,7 @@ class PanelForm extends \yii\widgets\ActiveForm
         	echo '<script>function upload_error( data ) { if ( data.response.error === undefined ) msg = ""; else msg = data.response.error; ' .
                 	'jQuery( "#upload" ).empty( ).append( "<div class=\"panel-field\">Your import did NOT complete. " + msg + "</div>" ); }</script>';
 
-        	echo $this->field( $model, 'file', [ 'template' => '{label}<div id=upload class="col-sm-9">{input}</div>{error}' ] )
+        	return $this->field( $model, 'file', [ 'template' => '{label}<div id=upload class="col-sm-9">{input}</div>{error}' ] )
                 	->widget( FileInput::classname( ), [
 	                	'pluginLoading' => false,
         	        	'options' => $options,
