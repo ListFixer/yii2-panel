@@ -117,8 +117,8 @@ class PanelForm extends \yii\widgets\ActiveForm
 
 	public function fileInputField( $model, $max_file_size_mb, $url, $options )
     	{
-        	echo '<script>function upload_error( data ) { if ( data.response.error === undefined ) msg = ""; else msg = data.response.error; ' .
-                	'jQuery( "#upload" ).empty( ).append( "<div class=\"panel-field\">Your import did NOT complete. " + msg + "</div>" ); }</script>';
+        	echo '<script>function upload_error( data ) { if ( data.response.error === undefined ) msg = "Your import did NOT complete."; else msg = data.response.error; ' .
+                	'jQuery( "#upload" ).empty( ).append( "<div class=\"panel-field\">" + msg + "</div>" ); }</script>';
 
         	return $this->field( $model, 'file', [ 'template' => '{label}<div id=upload class="col-sm-9">{input}</div>{error}' ] )
                 	->widget( FileInput::classname( ), [
