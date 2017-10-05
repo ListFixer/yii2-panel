@@ -101,7 +101,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 			echo $form->field( $model, 'note', [
 					'options' => [ 'class' => 'input-group' ],
 					'template' => '{input}<span class="input-group-btn">' . Html::submitButton( 'Add', [ 'class' => 'btn btn-default' ] ) . '</span>',
-					'inputOptions' => [ 'class' => 'form-control', 'placeholder' => 'New Note' ]
+					'inputOptions' => [ 'class' => 'form-control', 'placeholder' => 'New Note', 'maxlength' => 1024 ]
 					] )->label( false );
 			ActiveForm::end( );
 
