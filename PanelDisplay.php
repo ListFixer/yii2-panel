@@ -83,7 +83,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 	public function notes( $notes, $model = null )
 	{
 		echo '<ul class="list-group">';
-		echo '<li class="list-group-item"><strong>Notes:</strong></li>';
+		echo '<li class="list-group-item"><strong>Notes</strong></li>';
 
 		foreach ( $notes as $note )
 		{
