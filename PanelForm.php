@@ -76,11 +76,11 @@ class PanelForm extends \yii\widgets\ActiveForm
 		return $this->field( $model, $field_name )->checkbox( $options, false );
 	}
 
-	public function checkboxGroup( $model, $name, $fields )
+	public function checkboxGroup( $model, $name, $fields, $group_label = null )
 	{
 		$html = '<div class="form-group' . ( empty( $model->errors[$name] ) ? '' : ' has-error' ) . '">';
 
-		$html .= '<label class="col-sm-3 control-label">Levels</label>';
+		$html .= '<label class="col-sm-3 control-label">' . $group_label . '</label>';
 		$html .= '<div class="col-sm-5"><div class="form-control" style="height: auto;">';
 
 		foreach ( $fields as $field => $label )
