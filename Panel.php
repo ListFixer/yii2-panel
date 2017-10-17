@@ -41,7 +41,7 @@ class Panel extends \yii\base\Widget
 	 */
 	public $submitColor = 'btn-primary';
 	/**
-	 * @var array Buttons: [ label => id ]
+	 * @var array Buttons: [ label => value ]
 	 */
 	public $submitButtons = null;
 	/**
@@ -126,6 +126,10 @@ class Panel extends \yii\base\Widget
 
 			if ( $this->submitLabel )
 				echo Html::submitButton( $this->submitLabel, [ 'class' => 'btn ' . $this->submitColor ] );
+			
+			if ( $this->submitButtons )
+				foreach( $this->submitButtons as $label => $value )
+					echo Html::submitButton( $label, [ 'class' => 'btn', 'name' => 'submit', 'value' => $value ] );
 
 			if ( $this->leftFooterButtons )
 				foreach ( $this->leftFooterButtons as $label => $destination )
