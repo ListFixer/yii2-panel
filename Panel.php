@@ -41,6 +41,10 @@ class Panel extends \yii\base\Widget
 	 */
 	public $submitColor = 'btn-primary';
 	/**
+	 * @var array Buttons: [ label => id ]
+	 */
+	public $submitButtons = null;
+	/**
 	 * @var string Body class
 	 */
 	public $bodyClass = 'panel-body';
