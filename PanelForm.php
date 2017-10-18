@@ -112,6 +112,8 @@ class PanelForm extends \yii\widgets\ActiveForm
 	{
 		$value = ( empty( $options['value'] ) ? $model->{$field_name} : $options['value'] );
 
+		if ( empty( $value ) ) return;
+
 		return $this->heading( $model->getAttributeLabel( $field_name ), $value, $options );
 	}
 
