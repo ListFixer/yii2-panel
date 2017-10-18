@@ -129,7 +129,7 @@ class Panel extends \yii\base\Widget
 			
 			if ( $this->submitButtons )
 				foreach( $this->submitButtons as $label => $value )
-					echo Html::submitButton( $label, [ 'class' => 'btn btn-primary', 'name' => 'submit', 'value' => $value ] ) . ' ';
+					echo Html::submitButton( $label, [ 'class' => 'btn btn-primary', 'name' => 'button', 'value' => $value ] ) . ' ';
 
 			if ( $this->leftFooterButtons )
 				foreach ( $this->leftFooterButtons as $label => $destination )
