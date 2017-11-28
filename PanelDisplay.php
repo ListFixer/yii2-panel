@@ -40,7 +40,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		elseif ( empty( $options['parm'] ) )
 			$tableOptions = [ 'class' => 'table table-bordered table-hover lf-links', 'data-action' => $options['action'] ];
 		else
-			$tableOptions = [ 'class' => 'table table-bordered table-hover lf-links', 'data-action' => $action, 'data-parm' => $options['parm'] ];
+			$tableOptions = [ 'class' => 'table table-bordered table-hover lf-links', 'data-action' => $options['action'], 'data-parm' => $options['parm'] ];
 
 		echo GridView::widget( [
 			'dataProvider' => $dataProvider,
