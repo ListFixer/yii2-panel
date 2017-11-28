@@ -65,9 +65,17 @@ class PanelDisplay extends \listfixer\panel\Panel
 
 	public function search( $search )
 	{
+		$action = [ null ];
+
+        	if ( !empty( Yii::$app->request->get( 'p' ) ) )
+            		$action['p'] = Yii::$app->request->get( 'p' );
+
+        	if ( !empty( Yii::$app->request->get( 'id' ) ) )
+            		$action['id'] = Yii::$app->request->get( 'id' );
+
 		$form = ActiveForm::begin( [
 			'method' => 'get',
-			'action' => [ null, 'p' => Yii::$app->request->get( 'p' ) ],
+			'action' => $action,
 			'options' => [ 'class' => 'navbar-form navbar-right index-search-form' ]
 		] );
 
