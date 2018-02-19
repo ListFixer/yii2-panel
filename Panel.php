@@ -71,7 +71,8 @@ class Panel extends \yii\base\Widget
 		echo '<div class="panel ' . $this->color . '">';
 
 		// Heading
-		echo '<div class="panel-heading"><div class="row"><div class="col-sm-12">';
+		if ( $this->title || $this->pills || $this->rightHeaderButtons || $this->buttonGroup || $this->headerHtml )
+			echo '<div class="panel-heading"><div class="row"><div class="col-sm-12">';
 
 		if ( $this->title )
 			echo '<div class="panel-title">' . $this->title . '</div>';
@@ -102,7 +103,7 @@ class Panel extends \yii\base\Widget
 			echo '</div>';
 		}
 
-		if ( isset( $this->buttonGroup ) )
+		if ( $this->buttonGroup )
 		{
 			echo '<div class="btn-group pull-right">';
 			foreach ( $this->buttonGroup as $label => $destination )
@@ -110,10 +111,11 @@ class Panel extends \yii\base\Widget
 			echo '</div>';
 		}
 
-		if ( isset( $this->headerHtml ) )
+		if ( $this->headerHtml )
 			echo $this->headerHtml;
 	
-		echo '</div></div></div>';
+		if ( $this->title || $this->pills || $this->rightHeaderButtons || $this->buttonGroup || $this->headerHtml )
+			echo '</div></div></div>';
 
 		// Body
 		if ( $content )
