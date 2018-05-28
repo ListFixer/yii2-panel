@@ -60,7 +60,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 		return $this->field( $model, $field_name )->widget( Typeahead::classname( ), [
 			'dataset' => [ $config ],
 			'useHandleBars' => !empty( $options['template'] ),
-			'pluginOptions' => [ 'highlight' => true, 'minLength' => 4 ],
+			'pluginOptions' => [ 'highlight' => true, 'minLength' => ( empty( $options['minLength'] ) ? 3 : $options['minLength'] ) ],
 			'pluginEvents' => [
 				'blur' => 'function( ) { if ( document.getElementById( "' . $name_html_id . '" ).value == "" ) document.getElementById( "' . $id_html_id . '" ).value = save_' . $field_name . ' = ""; else document.getElementById( "' . $name_html_id . '" ).value = ( typeof save_' . $field_name . ' == "undefined" ? "" : save_' . $field_name . ' ); }',
 				'typeahead:select' => 'function( event, ui ) { document.getElementById( "' . $id_html_id . '" ).value = ui.id; save_' . $field_name . ' = ui.value; }'
