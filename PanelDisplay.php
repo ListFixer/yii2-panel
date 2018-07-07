@@ -63,15 +63,16 @@ class PanelDisplay extends \listfixer\panel\Panel
 		echo $value . '</div></div></div>';
 	}
 
-	public function search( $search )
+	public function search( $search, $action = [ ] )
 	{
-		$action = [ null ];
+		if ( empty( $action ) )
+		{
+	       		if ( !empty( Yii::$app->request->get( 'p' ) ) )
+            			$action['p'] = Yii::$app->request->get( 'p' );
 
-        	if ( !empty( Yii::$app->request->get( 'p' ) ) )
-            		$action['p'] = Yii::$app->request->get( 'p' );
-
-        	if ( !empty( Yii::$app->request->get( 'id' ) ) )
-            		$action['id'] = Yii::$app->request->get( 'id' );
+        		if ( !empty( Yii::$app->request->get( 'id' ) ) )
+            			$action['id'] = Yii::$app->request->get( 'id' );
+		}
 
 		$form = ActiveForm::begin( [
 			'method' => 'get',
