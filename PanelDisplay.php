@@ -29,7 +29,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 
 		foreach ( $buttons as $button )
 			echo PanelButton::widget( $button );
-		
+			
 		echo '</div></div></div>';
 	}
 
@@ -63,16 +63,14 @@ class PanelDisplay extends \listfixer\panel\Panel
 		echo $value . '</div></div></div>';
 	}
 
-	public function search( $search, $action = [ ] )
+	public function search( $search )
 	{
-		if ( empty( $action ) )
-		{
-	       		if ( !empty( Yii::$app->request->get( 'p' ) ) )
-            			$action['p'] = Yii::$app->request->get( 'p' );
+        	$action = Yii::$app->request->get( );
+        	$action[0] = Yii::$app->request->pathInfo;
 
-        		if ( !empty( Yii::$app->request->get( 'id' ) ) )
-            			$action['id'] = Yii::$app->request->get( 'id' );
-		}
+        	unset( $action['page'] );
+        	unset( $action['per-page'] );
+        	unset( $action['Search'] );
 
 		$form = ActiveForm::begin( [
 			'method' => 'get',
