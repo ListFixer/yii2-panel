@@ -29,7 +29,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 
 		foreach ( $buttons as $button )
 			echo PanelButton::widget( $button );
-			
+
 		echo '</div></div></div>';
 	}
 
