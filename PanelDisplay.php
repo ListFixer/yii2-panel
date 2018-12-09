@@ -80,9 +80,8 @@ class PanelDisplay extends \listfixer\panel\Panel
 
 		$template = '{input}';
 		
-		if ( !empty( $options['fields'] ) )
-			foreach ( $options['fields'] as $field )
-				$template .= '<span class="input-group-btn">' . $field . '</span>';
+		if ( !empty( $options['categories'] ) )
+			$template .= '<span class="input-group-btn">' . $form->field( $search, 'category_id', [ 'template' => '{input}' ] )->label( false )->dropDownList( $options['categories'] ) . '</span>';
 
 		$template .= '<span class="input-group-btn">' . Html::submitButton( 'Go!', [ 'class' => 'btn btn-default' ] ) . '</span>';
 
