@@ -63,7 +63,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		echo $value . '</div></div></div>';
 	}
 
-	public function search( $search )
+	public function search( $search, $options = [ ] )
 	{
         	$action = Yii::$app->request->get( );
         	$action[0] = Yii::$app->request->pathInfo;
@@ -78,9 +78,17 @@ class PanelDisplay extends \listfixer\panel\Panel
 			'options' => [ 'class' => 'navbar-form navbar-right index-search-form' ]
 		] );
 
+		$template = '{input}';
+		
+		if ( !empty( $options['fields'] ) )
+			foreach ( $options['fields'] as $field )
+				$template .= '<span class="input-group-btn">' . $field . '</span>';
+
+		$template .= '<span class="input-group-btn">' . Html::submitButton( 'Go!', [ 'class' => 'btn btn-default' ] ) . '</span>';
+
 		echo $form->field( $search, 'search', [
 			'options' => [ 'class' => 'input-group' ],
-			'template' => '{input}<span class="input-group-btn">' . Html::submitButton( 'Go!', [ 'class' => 'btn btn-default' ] ) . '</span>',
+			'template' => $template,
 			'inputOptions' => [ 'class' => 'form-control', 'placeholder' => 'Search' ]
 		] )->label( false );
 
