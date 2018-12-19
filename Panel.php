@@ -49,6 +49,10 @@ class Panel extends \yii\base\Widget
 	 */
 	public $bodyClass = 'panel-body';
 	/**
+	 * @var string Form class
+	 */
+	public $formClass = 'form-horizontal';
+	/**
 	 * @var boolean Used internally to trigger correct CSS class
 	 */
 	public $_hasFields = false;
@@ -65,8 +69,8 @@ class Panel extends \yii\base\Widget
 
 		$content = ob_get_clean( );
 
-		if ( $this->_hasFields )
-			echo '<div class="form-horizontal">';
+		if ( $this->_hasFields && !empty( $this->formClass ) )
+			echo '<div class="' . $this->formClass . '">';
 
 		echo '<div class="panel ' . $this->color . '">';
 
@@ -150,7 +154,7 @@ class Panel extends \yii\base\Widget
 
 		echo '</div>';
 
-		if ( $this->_hasFields )
+		if ( $this->_hasFields && !empty( $this->formClass )  )
 			echo '</div>';
 	}
 }
