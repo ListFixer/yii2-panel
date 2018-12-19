@@ -18,7 +18,10 @@ class PanelForm extends \yii\widgets\ActiveForm
 		$defaultFormConfig['fieldConfig']['labelOptions'] = ['class' => 'col-sm-3 control-label'];
 
 		if ( isset( $config['formConfig'] ) )
+		{
 			$formConfig = array_merge( $defaultFormConfig, $config['formConfig'] );
+			unset( $config['formConfig'] );
+		}
 		else
 			$formConfig = $defaultFormConfig;
 
