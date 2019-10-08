@@ -68,7 +68,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 				'blur' => 'function( ) { if ( document.getElementById( "' . $name_html_id . '" ).value == "" ) document.getElementById( "' . $id_html_id . '" ).value = save_' . $field_name . ' = ""; else document.getElementById( "' . $name_html_id . '" ).value = ( typeof save_' . $field_name . ' == "undefined" ? "" : save_' . $field_name . ' ); }',
 				'typeahead:select' => 'function( event, ui ) { document.getElementById( "' . $id_html_id . '" ).value = ui.id; save_' . $field_name . ' = ui.value; }'
 			],
-			'options' => [ 'placeholder' => 'Auto Search' ]
+			'options' => [ 'placeholder' => 'Auto Search', 'autocomplete' => 'off' ]
 		] );
 	}
 	
