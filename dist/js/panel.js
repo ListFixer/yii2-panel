@@ -4,6 +4,6 @@ jQuery( document ).ready( function( ) {
 		var key = jQuery( this ).attr( 'data-key' );
 		var parm = jQuery( this ).closest( "[data-parm]" ).attr( 'data-parm' );
 		if ( action && key )
-			window.location.href = action + '/' + key + ( parm ? '_' + parm : '' );
+			window.location.href = action + '/' + key + ( parm ? '?parm=' + parm : '' );
 	} );
 } );
