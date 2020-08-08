@@ -103,7 +103,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 	{
 		return $this->field( $model, $field_name )->widget( DatePicker::classname( ), [
 			'type' => DatePicker::TYPE_INPUT,
-			'options' => [ 'placeholder' => 'MM/DD/YYYY' ],
+			'options' => [ 'placeholder' => 'MM/DD/YYYY', 'autocomplete' => 'off' ],
 			'pluginOptions' => [
 				'forceParse' => true,
 				'autoclose' => true
