@@ -50,7 +50,7 @@ class PanelButton extends \yii\base\Widget
                'toggleButton' => [ 'label' => $this->label, 'class' => 'btn ' . $this->color . ( $this->small ? ' btn-xs' : '' ) ],
                ] );
 
-         echo '<p>Do you want to ' . strtolower( $this->label );
+         echo '<p>Do you want to ' . $this->label;
 
          if ( !empty( $this->name ) )
             echo ' "' . $this->name . '"';
