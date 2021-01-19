@@ -137,6 +137,7 @@ class PanelForm extends \yii\widgets\ActiveForm
                    			'fileuploaderror' => 'function( event, data ) { upload_error( data ); }',
                 		],
                 		'pluginOptions' => [
+					'buttonLabelClass' => '',
                    			'uploadAsync' => false,
                    			'showPreview' => false,
                    			'showRemove' => false,
