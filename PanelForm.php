@@ -1,6 +1,7 @@
 <?php namespace listfixer\panel;
 
 use Yii;
+use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\web\JsExpression;
@@ -158,7 +159,28 @@ class PanelForm extends \yii\widgets\ActiveForm
                 		]
             		] );
     	}
-	
+
+	public function grid( $dataProvider, $columns, $options = [ ] )
+	{
+		if ( empty( $options['action'] ) )
+			$tableOptions = [ 'class' => 'table table-bordered' ];
+		elseif ( empty( $options['parm'] ) )
+			$tableOptions = [ 'class' => 'table table-bordered table-hover lf-links', 'data-action' => $options['action'] ];
+		else
+			$tableOptions = [ 'class' => 'table table-bordered table-hover lf-links', 'data-action' => $options['action'], 'data-parm' => $options['parm'] ];
+
+		echo GridView::widget( [
+			'dataProvider' => $dataProvider,
+			'showFooter' => !empty( $options['showFooter'] ),
+			'tableOptions' => $tableOptions,
+			'rowOptions' => ( empty( $options['rowOptions'] ) ? false : $options['rowOptions'] ),
+			'pager' => [ 'maxButtonCount' => 6 ],
+			'layout' => '{pager}{items}',
+			'columns' => $columns,
+			'summary' => ''
+		] );
+	}	
+
 	public function heading( $label, $value )
 	{
 		return '<div class="form-group"><label class="col-sm-3 control-label">' . $label . '</label>' .
