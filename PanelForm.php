@@ -77,7 +77,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 	{
 		$options['class'] = 'checkbox-adjust';
 
-		return $this->field( $model, $field_name )->checkbox( $options, false );
+		return $this->field( $model, $field_name, [ 'hintOptions' => [ 'class' => 'hint-block checkbox-hint' ] ] )->checkbox( $options, false );
 	}
 
 	public function checkboxGroup( $model, $name, $fields, $group_label = null )
