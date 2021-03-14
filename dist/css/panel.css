@@ -3,75 +3,68 @@ div.panel-title {
 	 margin-bottom: 11px;
 	 display: inline-block;
 }
-
 div.panel-body-padding-bottom-zero {
 	 padding-bottom: 0px !important;
-}
- 
+} 
 div.panel-field {
 	 display: block;
 	 padding: 7px 12px;
 	 background-color: #f4f4f4;
 	 border-radius: 4px;
 }
-
 .lf-links tbody tr, .lf-links li.linked {
 	cursor: pointer;
 }
-
 .lf-links li.linked:hover {
 	background-color: #f5f5f5;
 }
-
 .btn-primary {
    background-image: none;
 }
-
 .panel-heading .btn,
 .panel-footer .btn {
    margin-top: 5px !important;
    margin-bottom: 5px !important;
 }
-
+.checkbox-group-label {
+    font-weight: bold;
+    margin: 0 12px 0 3px;
+}
 .form-control{
    transition: all 0 ease 0;
 }
-
 .list-group {
    margin-bottom: 10px !important;
 }
-
 a.asc:after {
    content: " \2193";
 }
-
 a.desc:after {
    content: " \2191";
 }
-
 .grid-view th {
    white-space: nowrap;
 }
-
 .hint-block {
    display: block;
    margin-bottom: 0px;
    color: #ad5d0f
 }
-
 .pagination {
    margin-top: 0px !important;
    margin-bottom: 8px !important;
 }
-
 form.index-search-form {
    margin-top: 0px !important;
    margin-bottom: 14px !important;
    padding-top: 0px !important;
    padding-bottom: 0px !important;
 }
-
 .upload-btns a, .upload-btns button {
    margin-top: 10px;
    margin-right: 10px;
+}
+.checkbox-group-label {
+    font-weight: bold;
+    margin: 0 12px 0 3px;
 }
