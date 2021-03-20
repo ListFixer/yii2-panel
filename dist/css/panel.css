@@ -3,9 +3,6 @@ div.panel-title {
 	 margin-bottom: 11px;
 	 display: inline-block;
 }
-div.panel-body-padding-bottom-zero {
-	 padding-bottom: 0px !important;
-} 
 div.panel-field {
 	 display: block;
 	 padding: 7px 12px;
