@@ -123,7 +123,7 @@ class Panel extends \yii\base\Widget
 
 		// Body
 		if ( $content )
-			echo '<div class="panel-body-padding-bottom-zero ' . $this->bodyClass . '">' . $content . '</div>';
+			echo '<div class="' . $this->bodyClass . '">' . $content . '</div>';
 
 		// Footer
 		if ( $this->submitLabel || $this->submitButtons || $this->leftFooterButtons || $this->rightFooterButtons )
