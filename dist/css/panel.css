@@ -23,6 +23,9 @@ div.panel-field {
    margin-top: 5px !important;
    margin-bottom: 5px !important;
 }
+.panel-body.panel-fields {
+  margin-bottom: 0px !important;
+}
 .checkbox-group-label {
     font-weight: bold;
     margin: 0 12px 0 3px;
