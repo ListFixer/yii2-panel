@@ -123,7 +123,7 @@ class Panel extends \yii\base\Widget
 
 		// Body
 		if ( $content )
-			echo '<div class="' . $this->bodyClass . '">' . $content . '</div>';
+			echo '<div class="' . $this->bodyClass . ( $this->_hasFields ? ' panel-fields' : '' ) . '">' . $content . '</div>';
 
 		// Footer
 		if ( $this->submitLabel || $this->submitButtons || $this->leftFooterButtons || $this->rightFooterButtons )
