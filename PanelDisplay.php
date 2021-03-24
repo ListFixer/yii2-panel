@@ -58,9 +58,8 @@ class PanelDisplay extends \listfixer\panel\Panel
 	{
 		$this->_hasFields = true;
 
-		echo '<div class="form-group"><label class="col-sm-3 control-label">' . $label . '</label>';
-		echo '<div class="col-sm-9"><div class="panel-field">';
-		echo $value . '</div></div></div>';
+		echo '<div class="form-group">' . ( empty( $label ) ? '<div class="col-sm-9 col-sm-offset-3">' : '<label class="col-sm-3 control-label">' . $label . '</label><div class="col-sm-9">' ) .
+			'<div class="panel-field">' . $value . '</div></div></div>';
 	}
 
 	public function search( $search, $options = [ ] )
