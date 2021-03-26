@@ -181,10 +181,11 @@ class PanelForm extends \yii\widgets\ActiveForm
 		] );
 	}	
 
-	public function heading( $label, $value, $options = [ ] )
+	public function heading( $label, $value )
 	{
-		return '<div class="form-group">' . ( empty( $label ) ? '<div class="col-sm-5 col-sm-offset-3">' : '<label class="col-sm-3 control-label">' . $label . '</label><div class="col-sm-5">' ) .
-			'<div class="panel-field">' . $value . '</div></div>' . ( empty( $options['helpBlock'] ) ? '' : '<div class="col-sm-4"><div class="help-block"></div></div>' ) . '</div>';
+		return '<div class="form-group">' .
+			( empty( $label ) ? '<div class="col-sm-5 col-sm-offset-3">' : '<label class="col-sm-3 control-label">' . $label . '</label><div class="col-sm-5">' ) .
+			'<div class="panel-field">' . $value . '</div></div></div>';
 
 	}
 }
