@@ -128,7 +128,7 @@ class Panel extends \yii\base\Widget
 		// Footer
 		if ( $this->submitLabel || $this->submitButtons || $this->leftFooterButtons || $this->rightFooterButtons )
 		{
-			echo '<div class="panel-footer"><div class="row"><div class="' . ( $this->_hasFields ? 'col-sm-9 col-sm-offset-3' : 'col-sm-12' ) . '">';
+			echo '<div class="panel-footer hidden-print"><div class="row"><div class="' . ( $this->_hasFields ? 'col-sm-9 col-sm-offset-3' : 'col-sm-12' ) . '">';
 
 			if ( $this->submitLabel )
 				echo Html::submitButton( $this->submitLabel, [ 'class' => 'btn ' . $this->submitColor ] );
