@@ -100,9 +100,9 @@ class PanelDisplay extends \listfixer\panel\Panel
 
 		foreach ( $notes as $note )
 		{
-			echo '<li class="list-group-item">';
+			echo '<li class="list-group-item"><strong>';
 			echo Yii::$app->formatter->format( $note->created, 'datetime' );
-			echo ' <span class="label label-info">' . Html::encode( $note->name ) . '</span> ' . Html::encode( $note->note );
+			echo '</strong> <span class="label label-info">' . Html::encode( $note->name ) . '</span> ' . Html::encode( $note->note );
 			echo '</li>';
 		}
 
