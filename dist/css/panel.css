@@ -53,7 +53,8 @@ a.desc:after {
 .grid-view table {
    margin-bottom: 15px;
 }
-.pagination {
+.pagination,
+.pagination ul {
    margin-top: 0px !important;
    margin-bottom: 0px !important;
 }
