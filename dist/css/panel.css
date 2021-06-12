@@ -50,9 +50,6 @@ a.desc:after {
    margin-bottom: 0px;
    color: #ad5d0f
 }
-.grid-view table {
-   margin-bottom: 15px;
-}
 .pagination,
 .pagination ul {
    margin-top: 0px !important;
