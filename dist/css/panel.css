@@ -50,10 +50,13 @@ a.desc:after {
    margin-bottom: 0px;
    color: #ad5d0f
 }
-.pagination,
-.pagination ul {
-   margin-top: 0px !important;
-   margin-bottom: 0px !important;
+.pager-top ul.pagination {
+   margin-top: 0px;
+   margin-bottom: 10px;
+}
+.pager-bottom ul.pagination {
+   margin-top: 15px;
+   margin-bottom: 0px;
 }
 form.index-search-form {
    margin-top: 0px !important;
