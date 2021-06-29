@@ -132,14 +132,14 @@ class Panel extends \yii\base\Widget
 
 			if ( $this->submitLabel )
 				echo Html::submitButton( $this->submitLabel, [ 'class' => 'btn ' . $this->submitColor ] );
-			
-			if ( $this->submitButtons )
-				foreach( $this->submitButtons as $label => $value )
-					echo Html::submitButton( $label, [ 'class' => 'btn btn-primary', 'name' => 'button', 'value' => $value ] ) . ' ';
 
 			if ( $this->leftFooterButtons )
 				foreach ( $this->leftFooterButtons as $label => $destination )
 					echo Html::a( $label, $destination, [ 'class' => 'btn btn-primary' ] ) . ' ';
+
+			if ( $this->submitButtons )
+				foreach( $this->submitButtons as $label => $value )
+					echo Html::submitButton( $label, [ 'class' => 'btn btn-primary', 'name' => 'button', 'value' => $value ] ) . ' ';
 
 			if ( $this->rightFooterButtons )
 			{
