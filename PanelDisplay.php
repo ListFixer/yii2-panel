@@ -87,7 +87,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 		echo $form->field( $search, 'search', [
 			'options' => [ 'class' => 'input-group' ],
 			'template' => $template,
-			'inputOptions' => [ 'class' => 'form-control', 'placeholder' => 'Search' ]
+			'inputOptions' => [ 'class' => 'form-control', 'placeholder' => 'Search', 'autocomplete' => 'off' ]
 		] )->label( false );
 
 		ActiveForm::end( );
