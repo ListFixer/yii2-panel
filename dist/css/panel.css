@@ -31,7 +31,7 @@ div.panel-field {
     margin: 0 12px 0 3px;
 }
 .form-control{
-   transition: all 0 ease 0;
+   transition: all 0s;
 }
 .list-group {
    margin-bottom: 10px !important;
