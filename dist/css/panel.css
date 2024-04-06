@@ -1,13 +1,14 @@
 div.panel-title {
-	 margin-top: 11px;
-	 margin-bottom: 11px;
-	 display: inline-block;
+	margin-top: 11px;
+	margin-bottom: 11px;
+	display: inline-block;
 }
 div.panel-field {
-	 display: block;
-	 padding: 7px 12px;
-	 background-color: #f4f4f4;
-	 border-radius: 4px;
+	display: block;
+	padding: 7px 12px;
+	background-color: #f4f4f4;
+	border-radius: 4px;
+	min-height: 32px;
 }
 .lf-links tbody tr, .lf-links li.linked {
 	cursor: pointer;
