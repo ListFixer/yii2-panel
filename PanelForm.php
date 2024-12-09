@@ -173,7 +173,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 			'dataProvider' => $dataProvider,
 			'showFooter' => !empty( $options['showFooter'] ),
 			'tableOptions' => $tableOptions,
-			'rowOptions' => ( empty( $options['rowOptions'] ) ? false : $options['rowOptions'] ),
+			'rowOptions' => ( empty( $options['rowOptions'] ) ? null : $options['rowOptions'] ),
 			'pager' => [ 'maxButtonCount' => 6 ],
 			'layout' => '{pager}{items}',
 			'columns' => $columns,
