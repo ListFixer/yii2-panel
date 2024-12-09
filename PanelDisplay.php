@@ -46,7 +46,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 			'dataProvider' => $dataProvider,
 			'showFooter' => !empty( $options['showFooter'] ),
 			'tableOptions' => $tableOptions,
-			'rowOptions' => ( empty( $options['rowOptions'] ) ? false : $options['rowOptions'] ),
+			'rowOptions' => ( empty( $options['rowOptions'] ) ? null : $options['rowOptions'] ),
 			'pager' => [ 'maxButtonCount' => 6 ],
 			'layout' => '<div class="pager-top">{pager}</div>{items}<div class="pager-bottom">{pager}</div>',
 			'columns' => $columns,
