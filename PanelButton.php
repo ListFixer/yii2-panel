@@ -53,7 +53,7 @@ class PanelButton extends \yii\base\Widget
          echo '<p>Do you want to ' . $this->label;
 
          if ( !empty( $this->name ) )
-            echo ' "' . $this->name . '"';
+            echo ' "' . html::encode( $this->name ) . '"';
 
          if ( !empty( $this->holder ) )
             echo ' from "' . html::encode( $this->holder ) . '"';
