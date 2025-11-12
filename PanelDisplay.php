@@ -25,7 +25,7 @@ class PanelDisplay extends \listfixer\panel\Panel
 
 		$info = Yii::$app->formatter->format( $value, $format );
 
-		echo ( empty( $url ) ? $info : Html::a( $info, $url ) );
+        echo ( empty( $url ) ? $info : ( empty( $options['target'] ) ? Html::a( $info, $url ) : Html::a( $info, $url, [ 'target' => $options['target'] ] ) ) );
 
 		foreach ( $buttons as $button )
 			echo PanelButton::widget( $button );
