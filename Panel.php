@@ -52,6 +52,10 @@ class Panel extends \yii\base\Widget
 	 * @var string Form class
 	 */
 	public $formClass = 'form-horizontal';
+    /**
+     * @var string Target for anchors
+     */
+    public $target = null;
 	/**
 	 * @var boolean Used internally to trigger correct CSS class
 	 */
