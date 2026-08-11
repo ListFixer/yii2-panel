@@ -32,6 +32,9 @@ div.panel-field {
    margin-left: 8px;
 }
 .panel-checkboxes {
+   height: auto;
+}
+.panel-checkbox {
    display: inline-block;
 }
 .checkbox-group-label {
