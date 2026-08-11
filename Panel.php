@@ -102,7 +102,7 @@ class Panel extends \yii\base\Widget
 
 		if ( $this->rightHeaderButtons )
 		{
-			echo '<div class="pull-right" style="margin-left: 8px;">';
+			echo '<div class="panel-header-btn">';
 			foreach ( $this->rightHeaderButtons as $button )
 			{
 				$button['small'] = false;
