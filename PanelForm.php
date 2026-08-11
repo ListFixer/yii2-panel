@@ -85,10 +85,10 @@ class PanelForm extends \yii\widgets\ActiveForm
 		$html = '<div class="form-group' . ( empty( $model->errors[$name] ) ? '' : ' has-error' ) . '">';
 
 		$html .= '<label class="col-sm-3 control-label">' . $group_label . '</label>';
-		$html .= '<div class="col-sm-5"><div class="form-control" style="height: auto;">';
+		$html .= '<div class="col-sm-5"><div class="form-control panel-checkboxes">';
 
 		foreach ( $fields as $field => $label )
-			$html .= $this->field( $model, $field, [ 'options' => [ 'tag' => 'span' ], 'template' => '<div style="display: inline-block;">{input} <span class="checkbox-group-label">' . $label . '</span></div>' ] )->checkBox( [ ], false );
+			$html .= $this->field( $model, $field, [ 'options' => [ 'tag' => 'span' ], 'template' => '<div class="panel-checkbox">{input} <span class="checkbox-group-label">' . $label . '</span></div>' ] )->checkBox( [ ], false );
 
 		$html .= '</div></div>';
 
