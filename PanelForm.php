@@ -123,19 +123,16 @@ class PanelForm extends \yii\widgets\ActiveForm
 
 	public function fileInputField( $model, $max_file_size_mb, $url, $options )
     	{
-        	echo '<script>function upload_error( data ) { if ( data.response.error === undefined ) msg = "Your import did NOT complete."; else msg = data.response.error; ' .
-                	'jQuery( "#upload" ).empty( ).append( "<div class=\"panel-field\">" + msg + "</div>" ); }</script>';
-
         	return $this->field( $model, 'file', [ 'template' => '{label}<div id=upload class="col-sm-9">{input}</div>{error}' ] )
                 	->widget( FileInput::classname( ), [
 	                	'pluginLoading' => false,
         	        	'options' => $options,
                 		'pluginEvents' => [
 					'filebatchuploadsuccess' => 'function( ) { jQuery( "#upload" ).empty( ).append( "<div class=\"panel-field\">Upload complete.</div>" ); }',
-                   			'filebatchuploaderror' => 'function( event, data ) { upload_error( data ); }',
-                   			'fileerror' => 'function( event, data ) { upload_error( data );}',
+                   			'filebatchuploaderror' => 'function( event, data ) {  jQuery( "div#upload" ).empty( ).append( "<div class=\"panel-field\">" + ( data.response.error === undefined ? "Your upload did NOT complete." : data.response.error ) + "</div>" ); }',
+                   			'fileerror' => 'function( event, data ) {  jQuery( "div#upload" ).empty( ).append( "<div class=\"panel-field\">" + ( data.response.error === undefined ? "Your upload did NOT complete." : data.response.error ) + "</div>" ); }',
                    			'filebrowse' => 'function( event ) { jQuery( "#trialresult-file" ).fileinput( "clear" ); }',
-                   			'fileuploaderror' => 'function( event, data ) { upload_error( data ); }',
+                   			'fileuploaderror' => 'function( event, data ) {  jQuery( "div#upload" ).empty( ).append( "<div class=\"panel-field\">" + ( data.response.error === undefined ? "Your upload did NOT complete." : data.response.error ) + "</div>" ); }'
                 		],
                 		'pluginOptions' => [
 					'buttonLabelClass' => '',
