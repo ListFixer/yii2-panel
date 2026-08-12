@@ -150,8 +150,7 @@ class PanelForm extends \yii\widgets\ActiveForm
                    			'uploadUrl' => Url::to( $url ),
                    			'layoutTemplates' => [
                       				'main1' => '<div class="kv-upload-progress"></div><div class="input-group {class}">{caption}<div class="input-group-btn">{browse}</div></div>' .
-                                  			'<div class="upload-btns">{upload}{remove}{cancel}</div>',
-                      				'progress' => '<div class="progress"><div class="progress-bar progress-bar-primary text-center" style="width:{percent}%;">{percent}%</div></div>'
+                                  			'<div class="upload-btns">{upload}{remove}{cancel}</div>'
                    			]
                 		]
             		] );
