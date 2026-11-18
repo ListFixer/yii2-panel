@@ -121,7 +121,7 @@ class PanelForm extends \yii\widgets\ActiveForm
 		return $this->heading( $model->getAttributeLabel( $field_name ), $value, $options );
 	}
 
-	public function fileInputField( $model, $max_file_size_mb, $url, $options )
+	public function fileInputField( $model, $max_file_size_mb, $url, $options = [ ], $plugin_options = [ ] )
     	{
         	return $this->field( $model, 'file', [ 'template' => '{label}<div id=upload class="col-sm-9">{input}</div>{error}' ] )
                 	->widget( FileInput::classname( ), [
@@ -134,8 +134,8 @@ class PanelForm extends \yii\widgets\ActiveForm
                    			'filebrowse' => 'function( event ) { jQuery( "#trialresult-file" ).fileinput( "clear" ); }',
                    			'fileuploaderror' => 'function( event, data ) {  jQuery( "div#upload" ).empty( ).append( "<div class=\"panel-field\">" + ( data.response.error === undefined ? "Your upload did NOT complete." : data.response.error ) + "</div>" ); }'
                 		],
-                		'pluginOptions' => [
-					'buttonLabelClass' => '',
+                		'pluginOptions' => $plugin_options + [
+							'buttonLabelClass' => '',
                    			'uploadAsync' => false,
                    			'showPreview' => false,
                    			'showRemove' => false,
